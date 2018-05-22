@@ -11,11 +11,10 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LoggingPreferences;
 import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.Assert;
+import org.springframework.util.Assert;
 
 import java.io.File;
 import java.net.InetAddress;
@@ -51,12 +50,11 @@ public class WebDriverUtils {
             LoggingPreferences loggingPrefs = new LoggingPreferences();
             loggingPrefs.enable(LogType.BROWSER, Level.ALL);
 
-            DesiredCapabilities capabilities = new DesiredCapabilities();
+            ChromeOptions capabilities = new ChromeOptions();
             capabilities.setCapability(ChromeOptions.CAPABILITY, options);
             capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
             capabilities.setCapability(CapabilityType.SUPPORTS_ALERTS, true);
             capabilities.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
-            capabilities.setJavascriptEnabled(true);
             capabilities.setCapability(LogType.BROWSER, Level.ALL);
             Configuration.startMaximized = true;
             Configuration.reopenBrowserOnFail = true;
@@ -106,10 +104,10 @@ public class WebDriverUtils {
                     SysUtils.sleep(30000);
                 }
             }
-            Assert.assertTrue(webDriver != null);
+            Assert.isTrue(webDriver != null);
             webDriver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         } catch (Exception e) {
-            Assert.fail("Driver can't be created due to !!!" + e);
+            LOG.error("Driver can't be created due to !!!" + e);
         }
         return webDriver;
     }
