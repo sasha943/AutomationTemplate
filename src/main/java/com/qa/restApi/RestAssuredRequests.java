@@ -1,15 +1,14 @@
 package com.qa.restApi;
 
-import com.jayway.restassured.http.ContentType;
-import com.jayway.restassured.response.ExtractableResponse;
-import com.jayway.restassured.response.Response;
-import com.jayway.restassured.specification.RequestSpecification;
-
+import io.restassured.http.ContentType;
+import io.restassured.response.ExtractableResponse;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 import java.io.File;
 import java.net.URI;
 import java.util.Map;
 
-import static com.jayway.restassured.RestAssured.given;
+import static io.restassured.RestAssured.given;
 
 public abstract class RestAssuredRequests {
 

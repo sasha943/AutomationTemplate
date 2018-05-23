@@ -18,13 +18,15 @@ sourceSets {
 }
 dependencies {
     compile group: 'junit', name: 'junit', version: '4.12'
-    testCompile group: 'org.testng', name: 'testng', version: '6.14.3'
-    compile 'io.rest-assured:rest-assured:', version: '3.1.0'
+    compile group: 'org.testng', name: 'testng', version: '6.14.3'
     compile group: 'com.jayway.restassured', name: 'rest-assured', version: '3.1.0'
     compile 'io.rest-assured:json-schema-validator:3.1.0'
     compile 'io.rest-assured:spring-mock-mvc:3.1.0'
+    compile group: 'com.jayway.restassured', name: 'rest-assured', version: '2.9.0'
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.12.0'
     compile group: 'com.codeborne', name: 'selenide', version: '4.11.4'
     compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.8.0-beta2'
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.8.0-beta2'
+    compile group: 'log4j', name: 'log4j', version: '1.2.17'
+    compile group: 'br.eti.kinoshita', name: 'testlink-java-api', version: '1.9.16-1'
 }

@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class BasePageImpl implements BasePage {
+public class BasePageImpl implements IBasePage {
 
     private static Logger LOG = LoggerFactory.getLogger(BasePageImpl.class);
 

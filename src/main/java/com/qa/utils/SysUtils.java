@@ -19,7 +19,7 @@ public class SysUtils {
         properties = System.getProperties();
     }
 
-    private static String getOperatingSystem() {
+    public static String getOperatingSystem() {
         return properties.getProperty("os.name").toLowerCase();
     }
 

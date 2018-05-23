@@ -6,7 +6,7 @@ import org.openqa.selenium.Point;
 
 import java.util.List;
 
-public interface BasePage {
+public interface IBasePage {
 
     void click(By by);
 
