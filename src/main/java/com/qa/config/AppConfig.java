@@ -18,7 +18,7 @@ public abstract class AppConfig {
     }
 
     public static String getTestLinkUrl() {
-        return properties.getProperty("TESTLINK_SERVER_URL");
+        return properties.getProperty("TEST_LINK_SERVER_URL");
     }
 
     public static String getProjectName() {
@@ -39,5 +39,13 @@ public abstract class AppConfig {
 
     public static String getTeamCityHost() {
         return properties.getProperty("TEAM_CITY_BUILD_URL");
+    }
+
+    public static boolean getProcessingResult() {
+        return Boolean.valueOf(properties.getProperty("PROCESSING_RESULT"));
+    }
+
+    public static String getBuildName() {
+        return properties.getProperty("BUILD_NAME");
     }
 }

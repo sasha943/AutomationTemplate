@@ -27,16 +27,13 @@ public class WebDriverUtils {
 
     private static Logger LOG = LoggerFactory.getLogger(WebDriverUtils.class);
 
-    public synchronized static WebDriver createWebDriverChrome(String fileDownloadPath) {
+    public synchronized static WebDriver createWebDriverChrome() {
         WebDriver webDriver = null;
         try {
             HashMap<String, Object> chromePrefs = new HashMap<>();
             chromePrefs.put("profile.default_content_settings.popups", 0);
             chromePrefs.put("credentials_enable_service", false);
             chromePrefs.put("profile.password_manager_enabled", false);
-            if (fileDownloadPath != null) {
-                chromePrefs.put("download.default_directory", fileDownloadPath);
-            }
 
             ChromeOptions options = new ChromeOptions();
             options.setExperimentalOption("prefs", chromePrefs);

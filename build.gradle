@@ -2,20 +2,34 @@ group 'com.qa.automation'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply plugin: 'idea'
 
 sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
 }
+
+buildscript {
+    dependencies {
+        classpath("src/main/java")
+    }
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 sourceSets {
     test {
         java { srcDir 'src/test/java' }
+        resources {srcDir('src/test/resources')}
     }
     main {
         java {srcDir 'src/main/java'}
+        resources {srcDir('src/main/resources')}
     }
 }
+
 dependencies {
     compile group: 'junit', name: 'junit', version: '4.12'
     compile group: 'org.testng', name: 'testng', version: '6.14.3'
